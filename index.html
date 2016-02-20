@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Apply2All</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	<div class="container" style="width:60%">
+		<h1 align="center">Apply2All</h1>
+		<h3 align="center">Get a personalized google query in seconds!</h3>
+		<br>
+		<div class="input-group">
+	        <span class="input-group-addon" id="basic-addon1">New Language:</span>
+	        <input type="text" class="form-control" id="languages" aria-describedby="basic-addon1" onkeydown = "if (event.keyCode == 13)
+		                        changeLang()" placeholder="python">
+	   </div>
+	   <br>
+		<p>Chosen Languages (Leave blank for all languages!):</p>
+		<ol id="langList" class="list-group"></ol>
+		<br>
+		<div class="input-group">
+	        <span class="input-group-addon" id="basic-addon1">New Location:</span>
+	        <input type="text" class="form-control" id="locations" aria-describedby="basic-addon1" onkeydown = "if (event.keyCode == 13)
+		                        changeLoc()" placeholder="Los Angeles">
+	   </div>
+	   <br>
+		<p>Chosen Locations (Leave blank for all locations!):</p>
+		<ol id="locList" class="list-group"></ol>
+		<br>
+		<br>
+		<button onclick="getQueries(0);" type="button" class="btn btn-primary btn-lg btn-block">Get Jobs!</button>
+		<button onclick="getQueries(1);" type="button" class="btn btn-success btn-lg btn-block">Get Internships!</button>
+		<button onclick="getQueries(2);" type="button" class="btn btn-warning btn-lg btn-block">Get New Grad Jobs!</button>
+		<!--
+		<script>
+		  (function() {
+		    var cx = '004536016950082319542:7cgvbjjlor8';
+		    var gcse = document.createElement('script');
+		    gcse.type = 'text/javascript';
+		    gcse.async = true;
+		    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+		        '//cse.google.com/cse.js?cx=' + cx;
+		    var s = document.getElementsByTagName('script')[0];
+		    s.parentNode.insertBefore(gcse, s);
+		  })();
+		</script>
+		<gcse:search id="googleSearch"></gcse:search>
+		!-->
+	</div>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+	<!-- jQuery -->
+   <script src="js/jquery.js"></script>
+
+   <!-- Bootstrap Core JavaScript -->
+   <script src="js/bootstrap.min.js"></script>
+	
+	<script>
+	var langList = document.getElementById('langList');
+	var locList = document.getElementById('locList');
+	var lastLang = 0;
+	var lastLoc = 0;
+	var buttonList =["btn btn-info","btn btn-danger","btn btn-warning","btn btn-success"]
+
+	function changeLang() {
+	   var curLang = document.getElementById('languages').value;
+	   document.getElementById('languages').value="";
+	   var entry = document.createElement('li');
+	   entry.appendChild(document.createTextNode(curLang));
+	   entry.setAttribute('id','item'+lastLang);
+	   entry.setAttribute('class',"list-group-item");
+	   var removeButton = document.createElement('button');
+	   entry.setAttribute('class',buttonList[lastLang%4]);
+	   removeButton.appendChild(document.createTextNode("X"));
+	   removeButton.setAttribute('onClick','removeLang("'+'item'+lastLang+'")');
+	   entry.appendChild(removeButton);
+	   //console.log(langList);
+	   //console.log(entry);
+	   lastLang+=1;
+	   langList.appendChild(entry);
+	   //console.log(langList);
+	}
+
+	function changeLoc() {
+	   var curLoc = document.getElementById('locations').value;
+	   document.getElementById('locations').value="";
+	   var entry = document.createElement('li');
+	   entry.appendChild(document.createTextNode(curLoc));
+	   entry.setAttribute('id','item'+lastLoc);
+	   entry.setAttribute('class',"list-group-item");
+	   var removeButton = document.createElement('button');
+	   entry.setAttribute('class',buttonList[lastLoc%4]);
+	   removeButton.appendChild(document.createTextNode("X"));
+	   removeButton.setAttribute('onClick','removeLoc("'+'item'+lastLoc+'")');
+	   entry.appendChild(removeButton);
+	   //console.log(locList);
+	   //console.log(entry);
+	   lastLoc+=1;
+	   locList.appendChild(entry);
+	   //console.log(locList);
+	}
+
+	function removeLang(itemid){
+	   var item = document.getElementById(itemid);
+	   langList.removeChild(item);
+	}
+	function removeLoc(itemid){
+	   var item = document.getElementById(itemid);
+	   locList.removeChild(item);
+	}
+	function getQueries(type){
+		var query='site:jobs.lever.co/* OR site:boards.greenhouse.io/* OR site:app.jobvite.com/* software OR engineering OR developer';
+		$('ol').each(function(){
+			var counter=0;
+			$(this).find('li').each(function(){
+				if(counter){
+					query += " OR";
+				}
+				query += " "+$(this).text().slice(0,-1);
+				counter++;
+			});
+		});
+		if(type==1){
+			query+= " internship OR intern";
+		}
+		else if(type==2){
+			query+= " 'new grad'";
+		}
+		console.log(query);
+		window.open("https://www.google.com/#q="+query,"_self")
+	}
+
+	</script>
+	<style>
+	h1 {
+		font-size: 380%;
+		color: #ffcc00;
+	}
+	</style>
+</body>
+
+</html>

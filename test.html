@@ -1,0 +1,429 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>On/Off Flipswitch HTML5/CSS3 Generator - Proto.io</title>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta property="og:title" content="On/Off Flipswitch HTML5/CSS3 Generator - Proto.io"/>
+	<meta name="keywords" content="on, off, flipswitch, flip,switch, on, off, generator, css3, freebies, proto.io, proto, prototypes, mobile, prototyping,toggle,checkboxes" />
+	
+	<meta name="description" content="Generate pure CSS3 On/Off flipswitches with animated transitions. As engineered for Proto.io." />
+	<meta property="og:description" content="Generate pure CSS3 On/Off flipswitches with animated transitions. As engineered for Proto.io."/>
+	
+
+	
+	<meta property="og:image" content="https://static.proto.io/images/publicsite/fb-logo.png?v=5.16.10.6"/>
+	<meta property="og:type" content="website" />
+
+	
+	<link rel="stylesheet" type="text/css" href="https://dteyv52hbg2at.cloudfront.net/css/publicsite/publicsite-min.css?5.16.10.6" />
+	<link rel="shortcut icon" type="image/ico" href="/favicon.ico?5.16.10.6" />
+
+	
+		<script src="//use.typekit.net/zlh3lmb.js"></script>
+		<script>try{Typekit.load();}catch(e){}</script>
+
+		
+		
+
+		
+	
+				<script type="text/javascript">
+				var _kmq = _kmq || [];
+				
+				var _kmk = _kmk || 'b19e97815a8769b9d0af879f9c6d561e6d4db54c';
+				
+				function _kms(u){
+				  setTimeout(function(){
+				    var d = document, f = d.getElementsByTagName('script')[0],
+				    s = d.createElement('script');
+				    s.type = 'text/javascript'; s.async = true; s.src = u;
+				    f.parentNode.insertBefore(s, f);
+				  }, 1);
+				}
+				_kms('//i.kissmetrics.com/i.js');
+				_kms('//doug1izaerwt3.cloudfront.net/' + _kmk + '.1.js');
+
+				
+				</script>
+
+			
+	    	  	<script>
+				   window.dataLayer = window.dataLayer || [];
+				   dataLayer.push({
+				      "ga.id": "UA-22826199-1", // Important enter UA-xxxxx-1 here
+				      "event": "ga_pageview" // Load GTM pageview template tag
+				   });
+				</script>
+	    	  
+</head>
+
+<body class="">
+
+				
+				<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-W83BLT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+				<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'}); var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-W83BLT');</script>
+				
+            	
+<span itemscope itemtype="http://schema.org/Product">
+
+	<link rel="Stylesheet" type="text/css" href="https://dteyv52hbg2at.cloudfront.net/js/plugins/minicolors/miniColors.2.0.dashboard/jquery.minicolors.css?5.16.10.6" />
+	<link type="text/css" rel="stylesheet" href="https://dteyv52hbg2at.cloudfront.net/js/plugins/snippet/jquery.snippet.min.css?5.16.10.6">
+	
+
+	
+
+	
+
+
+
+
+
+<header>
+	
+</header>
+<div class="publisitemaincontent container-fluid inner-content">
+
+
+<style id="onoffswitch-style">
+	.onoffswitch {
+	    position: relative; width: 90px;
+	    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+	}
+
+	.onoffswitch-checkbox {
+	    display: none;
+	}
+
+	.onoffswitch-label {
+	    display: block; overflow: hidden; cursor: pointer;
+	    border: 2px solid #999999; border-radius: 20px;
+	}
+
+	.onoffswitch-inner {
+	    width: 200%; margin-left: -100%;
+	    -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
+	    -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
+	}
+
+	.onoffswitch-inner:before, .onoffswitch-inner:after {
+	    float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+	    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+	    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+	}
+
+	.onoffswitch-inner:before {
+		content: "ON";
+	    padding-left: 10px;
+	    background-color: #34A7C1; color: #FFFFFF;
+	}
+
+	.onoffswitch-inner:after {
+		content: "OFF";
+	    padding-right: 10px;
+	    background-color: #EEEEEE; color: #999999;
+	    text-align: right;
+	}
+
+	.onoffswitch-switch {
+	    width: 22px; margin: 6px;
+	    background: #FFFFFF;
+	    border: 2px solid #999999; border-radius: 20px;
+	    position: absolute; top: 0; bottom: 0; right: 56px;
+	    -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
+	    -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s;
+	}
+
+	.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+	    margin-left: 0;
+	}
+
+	.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+	    right: 0px;
+	}
+
+</style>
+
+<img src="https://dteyv52hbg2at.cloudfront.net/images/freebies/onoff_pinterest.png" class="pinterest-img">
+<div id="on-off-freebie">
+	<div id="component-demo-wrapper" class="limit-width">
+		<div>
+			<a href="https://proto.io" target="_blank"></a>
+		</div>
+		<div id="component-demo-container">
+			<div class="onoffswitch">
+				<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="onoffswitch1" checked>
+				<label class="onoffswitch-label" for="onoffswitch1">
+					<div class="onoffswitch-inner"></div>
+					<div class="onoffswitch-switch"></div>
+				</label>
+			</div>
+		</div>
+	</div>
+	<a href="/freebies/" id="more-freebies">More freebies</a>
+	<div class="limit-width page-section last">
+		<div class="block-list freebies">
+			<form id="properties" autocomplete="off">
+				<div class="col-sm-6">
+
+
+					<div class="property-group">
+						<h3>Inactive state </h3>
+						<div class="property">
+							<label for="inactive-bg-color">Inactive background color</label>
+							<input type="text" name="inactive-bg-color" id="inactive-bg-color" value="#EEEEEE" class="picker">
+						</div>
+						<div class="property" id="inactive-text-color-property">
+							<label for="inactive-text-color">Inactive text color</label>
+							<input type="text" name="inactive-text-color" id="inactive-text-color" value="#999999" class="picker">
+						</div>
+						<div class="property" id="inactive-text-property">
+							<label for="inactive-text">Inactive text</label>
+							<input type="text" name="inactive-text" id="inactive-text" value="OFF">
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="property-group">
+						<h3>Switch</h3>
+						<div class="property">
+							<label for="switch-size">Switch size</label>
+							<div class="slider" id="switch-size-slider" data-min="5" data-max="50"></div>
+							<input type="text" name="switch-size" id="switch-size" class="slider-value" value="18">
+						</div>
+						<div class="property">
+							<label>Dual switch color</label>
+							<div class="onoffswitch">
+								<input type="checkbox" name="dual-switch-color" id="dual-switch-color" class="onoffswitch-checkbox">
+								<label class="onoffswitch-label" for="dual-switch-color">
+									<div class="onoffswitch-inner"></div>
+									<div class="onoffswitch-switch"></div>
+								</label>
+							</div>
+						</div>
+						<div class="property" id="switch-color-property">
+							<label for="switch-color">Switch background color</label>
+							<input type="text" name="switch-color" id="switch-color" value="#FFFFFF" class="picker">
+						</div>
+						<div class="property" id="active-switch-color-property" style="display: none;">
+							<label for="active-switch-color">Active switch color</label>
+							<input type="text" name="active-switch-color" id="active-switch-color" value="#27A1CA" class="picker">
+						</div>
+
+						<div class="property" id="inactive-switch-color-property" style="display: none;">
+							<label for="inactive-switch-color">Inactive switch color</label>
+							<input type="text" name="inactive-switch-color" id="inactive-switch-color" value="#A1A1A1" class="picker">
+						</div>
+
+						<div class="property" id="switch-border-color-property">
+							<label for="switch-border-color">Switch border color</label>
+							<input type="text" name="switch-border-color" id="switch-border-color" value="#999999" class="picker">
+						</div>
+						<div class="property">
+							<label>Switch ON by default</label>
+							<div class="onoffswitch">
+								<input type="checkbox" name="switch-default-state" id="switch-default-state" class="onoffswitch-checkbox" checked>
+								<label class="onoffswitch-label" for="switch-default-state">
+									<div class="onoffswitch-inner"></div>
+									<div class="onoffswitch-switch"></div>
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="property-group" id="property-group-labels">
+						<h3>Labels</h3>
+						<div class="property">
+							<label for="font-size">Font size</label>
+							<div class="slider" id="font-size-slider" data-min="10" data-max="40"></div>
+							<input type="text" name="font-size" id="font-size" class="slider-value" value="14">
+						</div>
+						<div class="property">
+							<label for="spacing">Text spacing</label>
+							<div class="slider" id="spacing-slider" data-min="5" data-max="50"></div>
+							<input type="text" name="spacing" id="spacing" class="slider-value" value="10">
+						</div>
+					</div>
+
+					<div class="property-group">
+						<h3>Sizing</h3>
+						<div class="property">
+							<label for="width">Width</label>
+							<div class="slider" id="width-slider" data-min="40" data-max="200"></div>
+							<input type="text" name="width" id="width" class="slider-value" value="90">
+						</div>
+						<div class="property">
+							<label for="height">Height</label>
+							<div class="slider" id="height-slider" data-min="5" data-max="75"></div>
+							<input type="text" name="height" id="height" class="slider-value" value="30">
+						</div>
+						<div class="property">
+							<label for="border-radius">Border radius</label>
+							<div class="slider" id="border-radius-slider" data-min="0" data-max="50"></div>
+							<input type="text" name="border-radius" id="border-radius" class="slider-value" value="20">
+						</div>
+					</div>
+				</div>
+			</form>
+
+			<h3>Get the CSS</h3>
+			<div id="css" class="code code-css"></div>
+
+			<h3>Get the HTML</h3>
+			<div id="html" class="code code-html"></div>
+
+		</div>
+	</div>
+
+	<div class="page-section sign-up-horizontal last row text-center">
+		<div class="form-container horizontal limit-width text-center">
+			<h3>Try Proto.io Free for 15 days</h3>
+			
+	<form
+		id="signup-horizontal"
+		method="post"
+		class="form-inline "
+		action="https://proto.io/en/signup/?id=B1430736-595F-4C6B-BEAE-DEF7CB8AC586#sfw"
+		>
+		
+		<input type="hidden" name="plan" id="plan" value="B1430736-595F-4C6B-BEAE-DEF7CB8AC586">
+		<input type="hidden" name="terms" id="terms" value="1">
+		<input type="hidden" name="company" id="company" value="">
+		<input type="hidden" name="promoname" id="promoname" value="">
+		<fieldset class="first">
+			<div class="row content-limit">
+				<div class="col-md-9 col-lg-10">
+					<div class="col-md-4">
+						<div class="form-group ">
+							<input class="form-control" id="fullname" name="fullname" type="text" placeholder="Full name" value="" data-fieldToPopulate="#signup-horizontal #sitename">
+							<div class="msg-position bottom"></div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group ">
+							<input class="form-control" id="email" name="email" type="text" placeholder="Email address" value="">
+							<div class="msg-position bottom"></div>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="form-group ">
+							<span id="pre-sitename" class="pull-left"></span>
+							<input class="form-control pull-left" id="sitename" name="sitename" type="text"
+							placeholder="accountname" value=""
+							style="margin-bottom:0;padding-right: 100px;">
+							<span class="help-form pull-right icon-info" data-placement='top' data-content="This is where your Proto.io account, including your projects, users, etc. will be located."></span>
+							<span class="protodomain pull-right">.proto.io</span>
+							<div class="msg-position bottom"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-lg-2">
+					<div class="form-group last text-center">
+						<button type="submit" class="btn btn-primary btn-sm" id="signUpGo">Start for free</button>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<span class="help-block">15-day free trial. No credit card required.</span>
+			</div>
+		</fieldset>
+	</form>
+
+
+		</div>
+	</div>
+	
+	<div class="limit-width no-padding">
+		<div class="block-list freebies">
+			<p class="small" style="margin-top: 30px;"> Please contact us with your ideas, thoughts, questions or for anything else on how we can improve this tool. Thanks! <a href="mailto:suggestions@proto.io">suggestions@proto.io</a></p>
+		</div>
+		<div id="footer">
+			<div id="as-seen-on-footer">As engineered for <a href="https://proto.io" target="_blank">Proto.io</a></div>
+			<div class="social-share">
+				<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://bit.ly/Mf89wD" data-text="Cool freebie from Proto.io! Generate CSS3-only On/Off flipswitches with animated transitions!" data-hashtags="css3,ui" data-counturl="http://proto.io/freebies/onoff/" data-related="protoio">Tweet</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				<div class="fb-like" data-href="https://proto.io/freebies/onoff/" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+				<a href="mailto:?subject=Generate pure CSS On/Off flipswitches with animated transitions&amp;body=https://proto.io/freebies/onoff/" class="email">Email</a>
+			</div>
+		</div>
+	</div>	
+		
+</div>
+
+	</div> 
+	<footer>
+		
+	<div class="footer-links">
+		<ul>
+			
+			<li><a href="/en/team/" title="Learn more about Proto.io">About</a></li>
+			<li><a href="/en/jobs/" title="See careers at Proto.io">Jobs</a></li>
+			<li><a href="/en/changelog/" title="New features and improvements to our wonderful spaceship">Changelog</a></li>
+			<li><a href="/en/learn/" title="Learn how to improve your prototyping skills!">Learn</a></li>
+			<li><a href="http://blog.proto.io" title="Get insights on Design, UX, and Prototyping">Blog</a></li>
+			
+				<li><a href="/en/signin/">Sign in</a></li>
+				<li><a href="/en/signup/">Sign Up</a></li>
+			
+			<li><a href="/en/presskit/" title="Proto.io logo, screenshots etc.">Press Kit</a></li>
+			<li><a href="/freebies/" title="Cool stuff to make your life much easier">Freebies</a></li>
+			<li><a href="/en/contact/" title="Get in touch">Contact us</a></li>
+			
+		</ul>
+	</div>
+
+<div class="footer-copyright">
+	
+	<p>
+		Copyright <span itemprop="name">Proto.io</span> 2016.
+		<a href="/en/privacy-policy/">Privacy Policy</a><span class="sep">, </span>
+		<a href="/en/terms-conditions/">Terms, and Conditions</a>
+	</p>
+	
+</div>
+
+<div class="footer-social">
+	<ul>
+		
+		<li><a href="http://twitter.com/protoio" target="_blank">Twitter</a></li>
+		<li><a href="http://dribbble.com/protoio" target="_blank">Dribbble</a></li>
+		<li><a href="http://www.facebook.com/protoio" target="_blank">Facebook</a></li>
+		<li><a href="https://spaces.proto.io/">Spaces</a></li>
+		
+	</ul>
+</div>
+	</footer>
+</span> 
+	
+
+
+    	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	
+	<script type="text/javascript" src="https://dteyv52hbg2at.cloudfront.net/js/plugins/bootstrap/bootstrap.min.js?5.16.10.6"></script>
+	<script type="text/javascript" src="https://dteyv52hbg2at.cloudfront.net/js/publicsite/publicsite-min.js?5.16.10.6"></script>
+
+	<!--[if lt IE 9]>
+		<script src="https://dteyv52hbg2at.cloudfront.net/js/plugins/html5shiv.js"></script>
+	<![endif]-->
+	
+
+
+
+</body>
+</html> 
+	<script type="text/javascript" src="https://dteyv52hbg2at.cloudfront.net/js/plugins/minicolors/jquery.minicolors.2.0.js?5.16.10.6"></script>
+	<script type="text/javascript" src="https://dteyv52hbg2at.cloudfront.net/js/plugins/snippet/jquery.snippet.custom.js?5.16.10.6"></script>
+	<script type="text/javascript" src="https://dteyv52hbg2at.cloudfront.net/js/plugins/jquery-ui/1.11.4/jquery-ui-1.11.4.slider.min.js?5.16.10.6"></script>
+
+<script>
+	$(document).ready(function(){
+		onoff.init();
+		onoff.renderCss(true);
+		onoff.renderHtml();
+	});
+</script> 
